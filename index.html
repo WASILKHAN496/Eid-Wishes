@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eid Wish For My Favorite Person 🌙✨</title>
+  <style>
+    :root {
+      --bg1: #0f1021;
+      --bg2: #1d1f45;
+      --gold: #ffd77a;
+      --gold-soft: #ffefbf;
+      --pink: #ff7eb6;
+      --rose: #ffb3c7;
+      --mint: #b5f7dc;
+      --white: #ffffff;
+      --card: rgba(255, 255, 255, 0.1);
+      --border: rgba(255, 255, 255, 0.18);
+      --shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--white);
+      background:
+        radial-gradient(circle at top left, rgba(255, 215, 122, 0.15), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(255, 126, 182, 0.15), transparent 30%),
+        linear-gradient(135deg, var(--bg1), var(--bg2));
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    button, input { font: inherit; }
+
+    .hidden { display: none !important; }
+
+    .stars, .sparkles, .floating-duas, .confetti-layer {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .star, .sparkle, .dua, .confetti {
+      position: absolute;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      user-select: none;
+    }
+
+    .star {
+      color: rgba(255,255,255,0.55);
+      animation-name: floatStar;
+    }
+
+    .sparkle {
+      color: var(--gold-soft);
+      filter: drop-shadow(0 0 10px rgba(255, 215, 122, 0.45));
+      animation-name: sparkleUp;
+    }
+
+    .dua {
+      color: rgba(255,255,255,0.1);
+      font-weight: 700;
+      letter-spacing: 1px;
+      animation-name: driftSide;
+      white-space: nowrap;
+    }
+
+    .confetti {
+      animation-name: confettiFall;
+      opacity: 0;
+    }
+
+    @keyframes floatStar {
+      from { transform: translateY(110vh) scale(0.7) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      to { transform: translateY(-20vh) scale(1.15) rotate(160deg); opacity: 0; }
+    }
+
+    @keyframes sparkleUp {
+      from { transform: translateY(100vh) scale(0.5); opacity: 0; }
+      20% { opacity: 1; }
+      to { transform: translateY(-15vh) scale(1.2); opacity: 0; }
+    }
+
+    @keyframes driftSide {
+      from { transform: translateX(-20vw) translateY(0); opacity: 0; }
+      20% { opacity: 1; }
+      80% { opacity: 1; }
+      to { transform: translateX(120vw) translateY(-30px); opacity: 0; }
+    }
+
+    @keyframes confettiFall {
+      0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(520deg); opacity: 0; }
+    }
+
+    .blob {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(35px);
+      opacity: 0.45;
+      z-index: 0;
+      animation: blobMove 14s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+
+    .blob-1 {
+      width: 300px; height: 300px;
+      top: 5%; left: -80px;
+      background: rgba(255, 126, 182, 0.18);
+    }
+
+    .blob-2 {
+      width: 360px; height: 360px;
+      bottom: 8%; right: -80px;
+      background: rgba(255, 215, 122, 0.16);
+      animation-duration: 18s;
+    }
+
+    .blob-3 {
+      width: 230px; height: 230px;
+      top: 45%; left: 55%;
+      background: rgba(181, 247, 220, 0.16);
+      animation-duration: 16s;
+    }
+
+    @keyframes blobMove {
+      from { transform: translate(0, 0) scale(1); }
+      to { transform: translate(30px, -30px) scale(1.15); }
+    }
+
+    .music-player {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 50;
+      background: rgba(255,255,255,0.11);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 10px 14px;
+      box-shadow: var(--shadow);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .music-btn {
+      border: none;
+      background: transparent;
+      color: var(--white);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .music-bars {
+      display: flex;
+      align-items: end;
+      gap: 4px;
+      height: 18px;
+    }
+
+    .music-bars span {
+      width: 4px;
+      border-radius: 999px;
+      background: linear-gradient(to top, var(--gold), var(--pink));
+      animation: bars 0.8s ease-in-out infinite alternate;
+    }
+
+    .music-bars span:nth-child(1) { height: 9px; animation-delay: 0s; }
+    .music-bars span:nth-child(2) { height: 15px; animation-delay: 0.1s; }
+    .music-bars span:nth-child(3) { height: 12px; animation-delay: 0.2s; }
+    .music-bars span:nth-child(4) { height: 17px; animation-delay: 0.3s; }
+    .music-bars span:nth-child(5) { height: 11px; animation-delay: 0.4s; }
+
+    @keyframes bars {
+      from { transform: scaleY(0.55); opacity: 0.7; }
+      to { transform: scaleY(1.1); opacity: 1; }
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    .landing {
+      display: grid;
+      place-items: center;
+      text-align: center;
+    }
+
+    .landing-card {
+      width: min(920px, 100%);
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+      border-radius: 32px;
+      padding: 44px 24px;
+      position: relative;
+      overflow: hidden;
+      animation: fadeUp 1s ease both;
+    }
+
+    .moon {
+      font-size: 4rem;
+      filter: drop-shadow(0 0 18px rgba(255, 215, 122, 0.45));
+      animation: moonGlow 2.6s ease-in-out infinite alternate;
+      margin-bottom: 10px;
+    }
+
+    @keyframes moonGlow {
+      from { transform: translateY(0) scale(1); }
+      to { transform: translateY(-6px) scale(1.04); }
+    }
+
+    .landing h1 {
+      font-size: clamp(2.2rem, 5vw, 4.5rem);
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+
+    .landing h1 em {
+      color: var(--gold);
+      font-style: normal;
+      text-shadow: 0 0 16px rgba(255, 215, 122, 0.25);
+    }
+
+    .landing p {
+      width: min(660px, 100%);
+      margin: 0 auto 24px;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: rgba(255,255,255,0.88);
+      line-height: 1.8;
+    }
+
+    .mini-line {
+      margin-bottom: 14px;
+      color: var(--gold-soft);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .btn {
+      padding: 14px 24px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.16);
+      cursor: pointer;
+      font-weight: 700;
+      transition: 0.3s ease;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), #ffb347);
+      color: #24140b;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.08);
+      color: var(--white);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn:hover {
+      transform: translateY(-4px) scale(1.02);
+    }
+
+    .wish-note {
+      margin-top: 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+    }
+
+    .nav {
+      position: sticky;
+      top: 12px;
+      z-index: 30;
+      margin: 0 auto 18px;
+      width: min(1100px, calc(100% - 20px));
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .nav-logo {
+      font-weight: 800;
+      color: var(--gold-soft);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: rgba(255,255,255,0.12);
+    }
+
+    .section-shell {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      padding: 28px 0 50px;
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 30px;
+      animation: fadeUp 0.8s ease both;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      margin-bottom: 10px;
+    }
+
+    .section-head p {
+      color: rgba(255,255,255,0.84);
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .hero-wish {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .glass-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glass-card::before {
+      content: "";
+      position: absolute;
+      inset: auto auto 0 -10%;
+      width: 140%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+    }
+
+    .main-message {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .main-message h3 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      line-height: 1.3;
+    }
+
+    .main-message p {
+      color: rgba(255,255,255,0.9);
+      line-height: 1.95;
+      font-size: 1.02rem;
+    }
+
+    .highlight {
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .crescent-box {
+      display: grid;
+      place-items: center;
+      min-height: 360px;
+      position: relative;
+    }
+
+    .crescent-ring {
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #fff4cf, #ffcf68 58%, #ffb347 100%);
+      position: relative;
+      box-shadow: 0 0 50px rgba(255, 215, 122, 0.35);
+      animation: pulseMoon 3s ease-in-out infinite alternate;
+    }
+
+    .crescent-ring::after {
+      content: "";
+      position: absolute;
+      top: 24px;
+      left: 72px;
+      width: 210px;
+      height: 210px;
+      background: linear-gradient(135deg, var(--bg1), var(--bg2));
+      border-radius: 50%;
+    }
+
+    .eid-badge {
+      position: absolute;
+      bottom: 35px;
+      padding: 12px 20px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-weight: 700;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+      animation: floatTag 2.4s ease-in-out infinite;
+    }
+
+    @keyframes pulseMoon {
+      from { transform: translateY(0) scale(1); }
+      to { transform: translateY(-8px) scale(1.03); }
+    }
+
+    @keyframes floatTag {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .dua-grid, .memory-grid, .reasons-grid, .gallery-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .dua-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .dua-card h3,
+    .memory-card h3,
+    .reason-card h3,
+    .message-card h3 {
+      margin-bottom: 10px;
+      color: var(--gold-soft);
+    }
+
+    .dua-card p,
+    .memory-card p,
+    .reason-card p,
+    .message-card p {
+      line-height: 1.9;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .memory-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .memory-card {
+      min-height: 220px;
+      transition: 0.35s ease;
+    }
+
+    .memory-card:hover,
+    .reason-card:hover,
+    .gallery-item:hover,
+    .message-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .memory-emoji {
+      font-size: 2rem;
+      margin-bottom: 14px;
+      display: inline-block;
+    }
+
+    .reasons-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .reason-card {
+      transition: 0.35s ease;
+    }
+
+    .gallery-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      min-height: 250px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border);
+      transition: 0.35s ease;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: 0.45s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 18px;
+      background: linear-gradient(to top, rgba(0,0,0,0.62), transparent);
+      font-weight: 700;
+    }
+
+    .message-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .type-box {
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .typing-text {
+      font-size: 1.08rem;
+      line-height: 2;
+      min-height: 170px;
+      color: rgba(255,255,255,0.95);
+      white-space: pre-wrap;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      animation: blink 0.8s infinite;
+      color: var(--gold);
+      font-weight: bold;
+    }
+
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+
+    .secret-box {
+      text-align: center;
+    }
+
+    .secret-box input {
+      width: min(320px, 100%);
+      padding: 14px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      outline: none;
+      background: rgba(255,255,255,0.08);
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .secret-box input::placeholder {
+      color: rgba(255,255,255,0.6);
+    }
+
+    .secret-output {
+      margin-top: 16px;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.92);
+      min-height: 80px;
+    }
+
+    .footer-note {
+      text-align: center;
+      padding: 10px 0 40px;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.96rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .ripple {
+      position: fixed;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.35);
+      border: 1px solid rgba(255,255,255,0.45);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 99;
+      animation: ripplePop 0.65s ease-out forwards;
+      backdrop-filter: blur(4px);
+    }
+
+    @keyframes ripplePop {
+      from { opacity: 0.8; transform: translate(-50%, -50%) scale(0.4); }
+      to { opacity: 0; transform: translate(-50%, -50%) scale(7); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(26px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-6px); }
+      50% { transform: translateX(6px); }
+      75% { transform: translateX(-4px); }
+    }
+
+    @media (max-width: 980px) {
+      .hero-wish,
+      .message-wrap,
+      .dua-grid,
+      .memory-grid,
+      .reasons-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 16px; }
+      .landing-card { padding: 34px 18px; border-radius: 24px; }
+      .nav { border-radius: 22px; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .music-player { right: 12px; bottom: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars" id="stars"></div>
+  <div class="sparkles" id="sparkles"></div>
+  <div class="floating-duas" id="duas"></div>
+  <div class="confetti-layer" id="confettiLayer"></div>
+
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <audio id="bgMusic" loop>
+    <source src="your-song.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="music-player" id="musicPlayer">
+    <button class="music-btn" onclick="toggleMusic()">
+      <span id="musicIcon">🎵</span>
+      <span id="musicLabel">Play Music</span>
+    </button>
+    <div class="music-bars hidden" id="musicBars">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <section class="page landing" id="home">
+    <div class="landing-card">
+      <div class="moon">🌙</div>
+      <div class="mini-line">Eid Mubarak • Special Wish • Just For You</div>
+      <h1>Eid Wish For <em>My Favorite Friend</em> ✨</h1>
+      <p>
+        This is not just a website. This is a little digital surprise made with love, duas,
+        soft memories, and a heart full of good wishes for someone truly special to me.
+        You are my friend, my comfort, and one of the sweetest parts of my life.
+      </p>
+      <div class="cta-row">
+        <button class="btn btn-primary" onclick="scrollToSection('wishSection')">Open My Eid Wish 💌</button>
+        <button class="btn btn-secondary" onclick="launchConfetti()">Celebrate Now ✨</button>
+      </div>
+      <div class="wish-note">🤍 Tomorrow is Eid, and today this page is all about your smile.</div>
+    </div>
+  </section>
+
+  <nav class="nav">
+    <div class="nav-logo">🌙 Eid Wish Vault</div>
+    <div class="nav-links">
+      <a href="#wishSection" onclick="setActive(this)">Wish</a>
+      <a href="#duaSection" onclick="setActive(this)">Duas</a>
+      <a href="#memoriesSection" onclick="setActive(this)">Moments</a>
+      <a href="#reasonsSection" onclick="setActive(this)">Reasons</a>
+      <a href="#messageSection" onclick="setActive(this)">Letter</a>
+      <a href="#secretSection" onclick="setActive(this)">Secret</a>
+    </div>
+  </nav>
+
+  <section class="page" id="wishSection">
+    <div class="section-shell">
+      <div class="section-head reveal">
+        <h2>My Eid Wish For You 🌙</h2>
+        <p>
+          Same soft language, same pure feeling, but now made specially as an Eid surprise.
+          I wanted this page to feel magical, warm, and memorable — just like your presence.
+        </p>
+      </div>
+
+      <div class="hero-wish">
+        <div class="glass-card main-message reveal">
+          <h3>Eid Mubarak to the <span class="highlight">sweetest soul</span> in my life 💖</h3>
+          <p>
+            On this beautiful Eid, I pray your heart stays peaceful, your smile stays bright,
+            and every dream you carry gets closer to reality. You are genuinely one of those rare
+            people whose presence feels soft, safe, and unforgettable.
+          </p>
+          <p>
+            I know you are <span class="highlight">only my friend</span>, but still, your importance is something
+            I can never explain in ordinary words. So I made this little world for you —
+            where every glow, every animation, and every line quietly says:
+            <span class="highlight">you matter a lot to me</span>.
+          </p>
+          <p>
+            May this Eid bring you laughter, peace, barakah, pretty moments, and memories that stay golden forever. ✨
+          </p>
+        </div>
+
+        <div class="glass-card crescent-box reveal">
+          <div class="crescent-ring"></div>
+          <div class="eid-badge">🌸 Eid Mubarak, Bestie 🌸</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" id="duaSection">
+    <div class="section-shell">
+      <div class="section-head reveal">
+        <h2>Little Duas For You 🤲</h2>
+        <p>Not just wishes — real prayers from the heart for your happiness, peace, and future.</p>
+      </div>
+
+      <div class="dua-grid">
+        <div class="glass-card dua-card reveal">
+          <h3>For Your Heart 💛</h3>
+          <p>May Allah fill your heart with peace, remove every hidden sadness, and replace every heavy moment with ease and light.</p>
+        </div>
+        <div class="glass-card dua-card reveal">
+          <h3>For Your Dreams 🌟</h3>
+          <p>May every dream written quietly inside your heart find the right time, the right path, and the right success.</p>
+        </div>
+        <div class="glass-card dua-card reveal">
+          <h3>For Your Smile 🌸</h3>
+          <p>May your smile always stay real, your days stay soft, and your life become more beautiful with each passing Eid.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" id="memoriesSection">
+    <div class="section-shell">
+      <div class="section-head reveal">
+        <h2>Small Moments, Big Meaning ✨</h2>
+        <p>These are not dramatic love-story moments. These are the simple friend moments that somehow became precious.</p>
+      </div>
+
+      <div class="memory-grid">
+        <div class="glass-card memory-card reveal">
+          <div class="memory-emoji">☕</div>
+          <h3>The Random Talks</h3>
+          <p>Those casual conversations that started normally but somehow stayed in my head for a very long time.</p>
+        </div>
+        <div class="glass-card memory-card reveal">
+          <div class="memory-emoji">😂</div>
+          <h3>The Stupid Laughs</h3>
+          <p>The kind of laughter that makes no sense to others but becomes a forever memory between two people.</p>
+        </div>
+        <div class="glass-card memory-card reveal">
+          <div class="memory-emoji">🌙</div>
+          <h3>The Silent Comfort</h3>
+          <p>Even in ordinary moments, your presence carries a strange kind of peace that always feels beautiful.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" id="reasonsSection">
+    <div class="section-shell">
+      <div class="section-head reveal">
+        <h2>Why This Wish Is Special 💌</h2>
+        <p>Because some people deserve effort, not just a copied Eid message from WhatsApp.</p>
+      </div>
+
+      <div class="reasons-grid">
+        <div class="glass-card reason-card reveal">
+          <h3>You Deserve Something Personal</h3>
+          <p>I did not want to send a dry "Eid Mubarak" text. I wanted to create something that feels designed only for you.</p>
+        </div>
+        <div class="glass-card reason-card reveal">
+          <h3>You Make Ordinary Days Better</h3>
+          <p>Some friends become routine. But some friends become comfort. You are that kind of person.</p>
+        </div>
+        <div class="glass-card reason-card reveal">
+          <h3>This Is My Way Of Showing Care</h3>
+          <p>Not in a complicated way. Not in a dramatic way. Just honestly, softly, and sincerely.</p>
+        </div>
+        <div class="glass-card reason-card reveal">
+          <h3>Eid Should Feel Memorable</h3>
+          <p>If this page makes you smile even once, then for me this whole effort becomes worth it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" id="messageSection">
+    <div class="section-shell">
+      <div class="section-head reveal">
+        <h2>A Letter Typed From The Heart 🕊️</h2>
+        <p>This section types itself slowly, so it feels like a real message being written for her.</p>
+      </div>
+
+      <div class="message-wrap">
+        <div class="glass-card type-box reveal">
+          <h3>Live Typing Wish ✨</h3>
+          <div class="typing-text" id="typingText"></div>
+        </div>
+        <div class="glass-card message-card reveal">
+          <h3>And One More Thing 🌷</h3>
+          <p>
+            Thank you for existing in my life exactly the way you do. Thank you for your energy,
+            your softness, your weirdness, your laughter, and even the little habits that make you uniquely you.
+          </p>
+          <p>
+            I genuinely hope this Eid begins a chapter full of happiness, answered prayers, glowing memories,
+            and beautiful surprises for you.
+          </p>
+          <p><strong>Eid Mubarak, my favorite friend. 🤍</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" id="secretSection">
+    <div class="section-shell">
+      <div class="section-head reveal">
+        <h2>Secret Eid Message 🔐</h2>
+        <p>Type her name and let the page unlock a personalized message.</p>
+      </div>
+
+      <div class="glass-card secret-box reveal">
+        <h3 style="margin-bottom:12px;color:var(--gold-soft);">Only for the special person ✨</h3>
+        <input type="text" id="secretInput" placeholder="Enter your beautiful name..." maxlength="30" />
+        <div>
+          <button class="btn btn-primary" onclick="unlockMessage()">Unlock Wish 💌</button>
+        </div>
+        <div class="secret-output" id="secretOutput">A soft little surprise is waiting here.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-note">Made with effort, duas, and heart — Eid 2026 🌙✨</div>
+
+  <script>
+    let audioCtx = null;
+    let musicPlaying = false;
+
+    function getAudioCtx() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      return audioCtx;
+    }
+
+    function playClickSound() {
+      try {
+        const ctx = getAudioCtx();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(650 + Math.random() * 250, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(240, ctx.currentTime + 0.14);
+        gain.gain.setValueAtTime(0.14, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.16);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.16);
+      } catch (e) {}
+    }
+
+    function spawnRipple(x, y) {
+      const ripple = document.createElement('div');
+      ripple.className = 'ripple';
+      ripple.style.left = x + 'px';
+      ripple.style.top = y + 'px';
+      document.body.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 700);
+    }
+
+    document.addEventListener('click', (e) => {
+      playClickSound();
+      spawnRipple(e.clientX, e.clientY);
+    });
+
+    function toggleMusic() {
+      const audio = document.getElementById('bgMusic');
+      const icon = document.getElementById('musicIcon');
+      const label = document.getElementById('musicLabel');
+      const bars = document.getElementById('musicBars');
+
+      if (!audio) return;
+
+      if (musicPlaying) {
+        audio.pause();
+        musicPlaying = false;
+        icon.textContent = '🎵';
+        label.textContent = 'Play Music';
+        bars.classList.add('hidden');
+      } else {
+        audio.volume = 0.45;
+        audio.play().then(() => {
+          musicPlaying = true;
+          icon.textContent = '🎶';
+          label.textContent = 'Now Playing';
+          bars.classList.remove('hidden');
+        }).catch(() => {
+          label.textContent = 'Tap Again';
+        });
+      }
+    }
+
+    function scrollToSection(id) {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function setActive(link) {
+      document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+      link.classList.add('active');
+    }
+
+    function spawnBackgroundStuff(containerId, items, className, min = 8, max = 15, minSize = 12, maxSize = 28, minDur = 10, maxDur = 20) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+
+      const el = document.createElement('span');
+      el.className = className;
+      el.textContent = items[Math.floor(Math.random() * items.length)];
+      el.style.left = Math.random() * 100 + '%';
+      el.style.top = Math.random() * 100 + '%';
+      el.style.fontSize = (Math.random() * (maxSize - minSize) + minSize) + 'px';
+      el.style.animationDuration = (Math.random() * (maxDur - minDur) + minDur) + 's';
+      el.style.animationDelay = (Math.random() * 2) + 's';
+      container.appendChild(el);
+      setTimeout(() => el.remove(), 22000);
+    }
+
+    const starItems = ['✦', '⋆', '✧', '·'];
+    const sparkleItems = ['✨', '🌸', '💖', '💫', '🫶'];
+    const duaItems = ['Eid Mubarak', 'Barakah', 'Peace', 'Happiness', 'Dua'];
+
+    setInterval(() => spawnBackgroundStuff('stars', starItems, 'star', 8, 18, 10, 22, 14, 24), 700);
+    setInterval(() => spawnBackgroundStuff('sparkles', sparkleItems, 'sparkle', 8, 18, 16, 28, 10, 18), 950);
+    setInterval(() => spawnBackgroundStuff('duas', duaItems, 'dua', 8, 18, 12, 20, 14, 22), 2200);
+
+    function launchConfetti() {
+      const layer = document.getElementById('confettiLayer');
+      const confettiItems = ['✨', '🌸', '💖', '🌙', '⭐'];
+      for (let i = 0; i < 40; i++) {
+        const piece = document.createElement('span');
+        piece.className = 'confetti';
+        piece.textContent = confettiItems[Math.floor(Math.random() * confettiItems.length)];
+        piece.style.left = Math.random() * 100 + '%';
+        piece.style.fontSize = (Math.random() * 16 + 12) + 'px';
+        piece.style.animationDuration = (Math.random() * 2 + 3) + 's';
+        piece.style.animationDelay = (Math.random() * 0.5) + 's';
+        layer.appendChild(piece);
+        setTimeout(() => piece.remove(), 4500);
+      }
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const typingMessage = `Eid Mubarak to you, truly.\n\nI hope your Eid is full of peace, smiles, pretty outfits, sweet moments, family warmth, and the kind of happiness that stays even after the day ends.\n\nAnd honestly... I just want you to know that your place in my life is special. You are a beautiful friend, and I am really grateful for you. 🌙✨`;
+    let typingIndex = 0;
+
+    function typeWish() {
+      const target = document.getElementById('typingText');
+      if (!target) return;
+      if (typingIndex < typingMessage.length) {
+        const nextChar = typingMessage[typingIndex] === '\n' ? '<br>' : typingMessage[typingIndex];
+        target.innerHTML += nextChar;
+        typingIndex++;
+        setTimeout(typeWish, 34);
+      } else {
+        target.innerHTML += '<span class="cursor">|</span>';
+      }
+    }
+
+    const secretMessages = {
+      hina: 'Eid Mubarak, Ayesha 🌸 You make moments feel soft and memorable. May this Eid bring you peace, pretty surprises, and a smile that stays all day long.',
+      alishba: 'Eid Mubarak, Wasil 💛 May your Eid be full of light, laughter, and the kind of happiness you truly deserve.',
+      arfa: 'Eid Mubarak, Rizwan 💜 You are deeply appreciated. I hope this Eid brings comfort, joy, and beautiful new memories.',
+      maryam: 'Eid Mubarak, Maryam 💚 May your heart stay calm, your home stay blessed, and your smile stay bright.',
+      saleha: 'Eid Mubarak, Saleha 🧡 May this Eid wrap your life in positivity, peace, and barakah.'
+    };
+
+    function unlockMessage() {
+      const input = document.getElementById('secretInput');
+      const output = document.getElementById('secretOutput');
+      const value = input.value.trim().toLowerCase();
+
+      if (!value) {
+        output.textContent = 'Please type a name first 🌷';
+        output.style.animation = 'shake 0.4s ease';
+        return;
+      }
+
+      if (secretMessages[value]) {
+        output.innerHTML = '<strong>' + secretMessages[value] + '</strong>';
+        launchConfetti();
+      } else {
+        output.textContent = 'That name is not in the secret wish list yet ✨ Add it in the JS if you want more custom names.';
+        output.style.animation = 'shake 0.4s ease';
+      }
+    }
+
+    document.getElementById('secretInput')?.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') unlockMessage();
+    });
+
+    window.addEventListener('load', () => {
+      setTimeout(typeWish, 800);
+    });
+  </script>
+</body>
+</html>
